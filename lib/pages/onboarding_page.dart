@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/pages/home_page.dart';
 
 import '../theme.dart';
 
@@ -46,7 +47,16 @@ class Onboardingpaage extends StatelessWidget {
                 height: 56,
                 width: MediaQuery.of(context).size.width - (2 * 72),
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return HomePage();
+                        },
+                      ),
+                    );
+                  },
                   color: utilityWarningColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(4),
