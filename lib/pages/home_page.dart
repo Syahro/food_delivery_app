@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/theme.dart';
+import 'package:food_delivery_app/widgets/botom_navbar.dart';
 import 'package:food_delivery_app/widgets/popular_categories.dart';
 import 'package:food_delivery_app/widgets/special_menu.dart';
 
@@ -8,6 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: utilityDarkBackgroundColor,
+      bottomNavigationBar: BottomNavbar(),
       body: SafeArea(
         child: ListView(
           padding: EdgeInsets.only(left: 16),
@@ -193,7 +195,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 100,
+                    height: 20,
                   ),
                 ],
               ),
