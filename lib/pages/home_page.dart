@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/pages/fast_food_page.dart';
 import 'package:food_delivery_app/theme.dart';
 import 'package:food_delivery_app/widgets/botom_navbar.dart';
 import 'package:food_delivery_app/widgets/popular_categories.dart';
@@ -81,9 +82,21 @@ class HomePage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      PopularCategories(
-                        'pizza.png',
-                        accentOrangeColor,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return FastFoodpage();
+                              },
+                            ),
+                          );
+                        },
+                        child: PopularCategories(
+                          'pizza.png',
+                          accentOrangeColor,
+                        ),
                       ),
                       PopularCategories(
                         'salad.png',
