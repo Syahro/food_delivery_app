@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/pages/home_page.dart';
+import 'package:food_delivery_app/pages/track_page.dart';
 import 'package:food_delivery_app/theme.dart';
 
 class BottomNavbar extends StatelessWidget {
@@ -26,41 +28,65 @@ class BottomNavbar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  'assets/home.png',
-                  width: 24,
-                  height: 24,
-                  color: utilityWarningColor,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'Home',
-                  style: paragraphMedium.copyWith(color: utilityWarningColor),
-                ),
-              ],
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return HomePage();
+                    },
+                  ),
+                );
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/home.png',
+                    width: 24,
+                    height: 24,
+                    color: utilityWarningColor,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Home',
+                    style: paragraphMedium.copyWith(color: utilityWarningColor),
+                  ),
+                ],
+              ),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  'assets/orders.png',
-                  width: 24,
-                  height: 24,
-                  color: inkWhiteColor,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'Orders',
-                  style: paragraphMedium.copyWith(color: inkWhiteColor),
-                ),
-              ],
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return TrackPage();
+                    },
+                  ),
+                );
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/orders.png',
+                    width: 24,
+                    height: 24,
+                    color: inkWhiteColor,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Orders',
+                    style: paragraphMedium.copyWith(color: inkWhiteColor),
+                  ),
+                ],
+              ),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
