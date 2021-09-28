@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/pages/rate_page.dart';
 
 import '../theme.dart';
 
@@ -47,10 +48,17 @@ class SpecialMenu extends StatelessWidget {
           ),
           Row(
             children: [
-              Icon(
-                Icons.star,
-                color: utilityWarningColor,
-                size: 14,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return RatePage();
+                  }));
+                },
+                child: Icon(
+                  Icons.star,
+                  color: utilityWarningColor,
+                  size: 14,
+                ),
               ),
               SizedBox(
                 width: 7,
